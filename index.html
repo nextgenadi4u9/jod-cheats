@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jod Cheats Official | Mobile Pro</title>
+    <title>Jod Cheats Official | Pro Mods</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --neon: #00ffcc;
-            --bg: #050505;
-            --card: #121212;
+            --primary: #00ffcc;
+            --bg: #0a0a0a;
+            --card-bg: #151515;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
+            font-family: 'Segoe UI', sans-serif;
             background-color: var(--bg);
             color: white;
-            font-family: 'Poppins', sans-serif;
             overflow-x: hidden;
         }
 
@@ -28,15 +28,14 @@
             z-index: -1;
         }
 
-        /* Responsive Header */
+        /* HEADER - Mobile & PC Responsive */
         header {
             padding: 15px 5%;
-            background: rgba(0,0,0,0.9);
-            border-bottom: 2px solid var(--neon);
             display: flex;
-            flex-direction: column; /* Mobile sathi column */
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            border-bottom: 2px solid var(--primary);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -44,111 +43,107 @@
 
         .logo {
             font-size: 1.5rem;
-            color: var(--neon);
-            font-weight: 800;
-            text-shadow: 0 0 10px var(--neon);
-            letter-spacing: 2px;
-        }
-
-        nav {
-            display: flex;
-            gap: 15px;
+            font-weight: bold;
+            color: var(--primary);
+            text-shadow: 0 0 10px var(--primary);
         }
 
         nav a {
-            color: #ccc;
+            color: white;
             text-decoration: none;
+            margin-left: 15px;
             font-size: 0.9rem;
-            text-transform: uppercase;
+            transition: 0.3s;
         }
 
-        /* Hero Section */
+        nav a:hover { color: var(--primary); }
+
+        /* HERO SECTION */
         .hero {
-            padding: 60px 20px;
             text-align: center;
+            padding: 80px 20px;
         }
 
-        .hero h1 {
-            font-size: 2.2rem;
-            line-height: 1.2;
-        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero span { color: var(--primary); text-shadow: 0 0 15px var(--primary); }
 
-        .hero span { color: var(--neon); }
+        /* GRID SYSTEM (Main Magic) */
+        .container { padding: 30px 5%; }
 
-        /* Categories Section */
-        .section-box { padding: 30px 5%; }
-
-        .cat-head {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
+        .category-title {
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+            margin: 40px 0 20px;
+            font-size: 1.8rem;
             display: flex;
             align-items: center;
             gap: 10px;
-            color: var(--neon);
         }
 
-        /* Grid - Mobile var 1 column, Tablet var 2, Desktop var 3 */
         .grid {
             display: grid;
+            /* Mobile: 1 card, Tablet: 2 cards, PC: 3+ cards */
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 25px;
         }
 
         .card {
-            background: var(--card);
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid #222;
-            transition: 0.3s;
+            background: var(--card-bg);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
             text-align: center;
+            transition: 0.4s ease;
         }
 
-        .card:active { /* Mobile touch effect */
-            transform: scale(0.95);
-            border-color: var(--neon);
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 255, 204, 0.2);
         }
 
-        .card h3 { margin-bottom: 10px; font-size: 1.3rem; }
-        .card p { color: #888; font-size: 0.9rem; margin-bottom: 20px; }
-
-        .btn {
+        .btn-buy {
             display: block;
-            background: var(--neon);
+            margin-top: 20px;
+            padding: 12px;
+            background: var(--primary);
             color: black;
             text-decoration: none;
-            padding: 12px;
-            border-radius: 8px;
             font-weight: bold;
-            box-shadow: 0 5px 15px rgba(0, 255, 204, 0.3);
+            border-radius: 8px;
+            transition: 0.3s;
         }
 
-        /* Footer */
+        .btn-buy:hover { background: white; box-shadow: 0 0 20px var(--primary); }
+
+        /* FOOTER */
         footer {
-            background: #000;
-            padding: 40px 20px;
+            background: #050505;
+            padding: 50px 5%;
             text-align: center;
             border-top: 1px solid #222;
         }
 
-        .socials { margin-bottom: 20px; }
-        .socials a {
+        .social-links a {
+            font-size: 2rem;
             color: white;
-            font-size: 1.8rem;
             margin: 0 15px;
+            transition: 0.3s;
         }
 
-        .footer-links a {
-            color: #555;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 0.8rem;
-        }
+        .social-links .fa-telegram { color: #0088cc; }
+        .social-links .fa-whatsapp { color: #25d366; }
+        .social-links .fa-youtube { color: #ff0000; }
 
-        /* Desktop Settings (Screens larger than 768px) */
-        @media (min-width: 768px) {
-            header { flex-direction: row; justify-content: space-between; }
-            .hero h1 { font-size: 4rem; }
-            .logo { font-size: 2rem; }
+        .legal-links { margin: 20px 0; }
+        .legal-links a { color: #666; text-decoration: none; margin: 0 10px; font-size: 0.8rem; }
+
+        /* RESPONSIVE ADJUSTMENTS */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.8rem; }
+            header { flex-direction: column; gap: 10px; }
+            nav { margin-bottom: 5px; }
+            nav a { margin: 0 8px; font-size: 0.8rem; }
         }
     </style>
 </head>
@@ -157,69 +152,76 @@
     <div id="particles-js"></div>
 
     <header>
-        <div class="logo">JOD CHEATS</div>
+        <div class="logo">JOD CHEATS OFFICIAL</div>
         <nav>
-            <a href="#android">Android</a>
-            <a href="#ios">iOS</a>
-            <a href="#windows">PC</a>
+            <a href="#android">ANDROID</a>
+            <a href="#ios">IOS</a>
+            <a href="#windows">WINDOWS</a>
         </nav>
     </header>
 
     <section class="hero">
-        <h1 id="typing-text">CHEATS FOR <span>LEGENDS</span></h1>
-        <p style="margin-top:15px; color:#aaa;">Best Anti-Ban Game Mods.</p>
+        <h1>UNLEASH THE <span>HACKER</span> INSIDE</h1>
+        <p>Premium Mod Menus for All Devices</p>
     </section>
 
-    <div class="section-box" id="android">
-        <div class="cat-head"><i class="fab fa-android"></i> ANDROID MODS</div>
+    <div class="container">
+        <h2 class="category-title" id="android"><i class="fab fa-android"></i> Android</h2>
         <div class="grid">
             <div class="card">
-                <h3>BGMI GLOBAL</h3>
-                <p>Aimbot + Magic Bullet + Less Recoil</p>
-                <a href="https://t.me/yourlink" class="btn">GET NOW</a>
+                <h3>BGMI MOD</h3>
+                <p>ESP | Aimbot | Magic Bullet</p>
+                <a href="https://wa.me/yournumber" class="btn-buy">Buy via WhatsApp</a>
             </div>
             <div class="card">
-                <h3>FREE FIRE MAX</h3>
-                <p>Auto Headshot + Antenna + Speed</p>
-                <a href="#" class="btn">GET NOW</a>
+                <h3>FREE FIRE</h3>
+                <p>Auto Headshot | Fly Hack</p>
+                <a href="#" class="btn-buy">Buy via Telegram</a>
             </div>
         </div>
-    </div>
 
-    <div class="section-box" id="ios">
-        <div class="cat-head"><i class="fab fa-apple"></i> IOS PREMIUM</div>
+        <h2 class="category-title" id="ios"><i class="fab fa-apple"></i> iOS</h2>
         <div class="grid">
             <div class="card">
-                <h3>PUBG IOS IPA</h3>
-                <p>No Jailbreak Required. 100% Safe.</p>
-                <a href="#" class="btn">GET NOW</a>
+                <h3>PUBG MOBILE iOS</h3>
+                <p>No Jailbreak | IPA Mod</p>
+                <a href="#" class="btn-buy">Get Access</a>
+            </div>
+        </div>
+
+        <h2 class="category-title" id="windows"><i class="fab fa-windows"></i> Windows</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>COD WARZONE</h3>
+                <p>Internal Hack | PC Only</p>
+                <a href="#" class="btn-buy">Get Access</a>
             </div>
         </div>
     </div>
 
     <footer>
-        <div class="socials">
-            <a href="#" style="color:#0088cc;"><i class="fab fa-telegram"></i></a>
-            <a href="#" style="color:#ff0000;"><i class="fab fa-youtube"></i></a>
-            <a href="#" style="color:#25d366;"><i class="fab fa-whatsapp"></i></a>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-telegram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
         </div>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a> | <a href="#">Terms</a>
+        <div class="legal-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
         </div>
-        <p style="color:#333; margin-top:15px; font-size:0.7rem;">&copy; 2026 JOD CHEATS OFFICIAL</p>
+        <p style="color: #444; font-size: 0.8rem;">&copy; 2026 JOD CHEATS OFFICIAL. All Rights Reserved.</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Particle Background
         particlesJS("particles-js", {
             "particles": {
-                "number": { "value": 50 },
+                "number": { "value": 60 },
                 "color": { "value": "#00ffcc" },
                 "shape": { "type": "circle" },
-                "opacity": { "value": 0.3 },
+                "opacity": { "value": 0.4 },
                 "size": { "value": 2 },
-                "line_linked": { "enable": true, "distance": 100, "color": "#00ffcc", "opacity": 0.2, "width": 1 },
+                "line_linked": { "enable": true, "distance": 120, "color": "#00ffcc", "opacity": 0.3, "width": 1 },
                 "move": { "enable": true, "speed": 2 }
             }
         });
